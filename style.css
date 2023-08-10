@@ -26,6 +26,8 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     font-family: 'Jost', sans-serif;
+    color: var(--clr-pure-black);
+    background-color: #f3f3f3;
 }
   /*
     5. Improve media defaults
@@ -49,7 +51,6 @@ body {
     line-height: 1.5;
 }
 
-
 :root{
     --clr-yellow: #fbffa7;
     --clr-red: #ff764d;
@@ -62,7 +63,12 @@ body {
     --clr-pure-black: #000000;
 }
 
-/* -------- primary Nav  --------*/
+
+nav, .container{
+  background: var(--clr-pure-white);
+}
+
+/* --- primary Nav ---*/
 .primary-nav, .secondary-nav{
   position: relative;
   padding: 1.05rem 1.2rem;
@@ -73,6 +79,10 @@ body {
   position: relative;
   flex-direction: column;
   gap: 2rem;
+}
+
+.secondary-nav{
+  transition: all 0.5s ease;
 }
 
 .main-site-logo{
@@ -90,8 +100,7 @@ body {
   align-items: center;
 }
 
-
-/* hide mobile menu toggle */
+/* --- hide mobile menu toggle on desktop --- */
 .menu-toggle{
   display: none;
   background: none; 
@@ -102,29 +111,12 @@ body {
 .nav-link-list{
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.4rem;
   width: 100%;
 }
 
-.main-link-list{
-  margin: 0.25rem;
+.main-link-list{  
   padding-left:  4.5rem;
-}
-
-/* --- General Styles for hidden nav content --- */
-
-/* .hidden-nav-links{
-  display: flex;
-  gap: 1.2rem;
-} */
-
-.hidden-nav-items h3{
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-.hidden-nav-items h4{
-  font-weight: 500;
 }
 
 .nav-link-list .try-live{
@@ -132,42 +124,115 @@ body {
   margin-right: 0;
 }
 
-.nav-link-list-item a{
-  color: var(--clr-pure-black);
-}
 
+.nav-link-list-item a, .collapsible-toggle-btn{
+  color: var(--clr-pure-black);
+  font-size: 1.2rem;
+}
 
 .primary-nav .nav-link-list-item a{
   font-weight: 500;
 }
 
-
-/* Plus (+) next to "More" Link */
-.bx-plus{
-  font-size: 1.3rem;
-  position: absolute;
-  top: 1px;
+.nav-link-list-item a.small-text, .small-text{
+  font-size: 0.875rem;
+  font-weight: 400;
 }
 
+.nav-link-list-item.login a{
+  font-weight: 500;
+  font-size: 0.95rem;
+}
 
+/* .nav-link-list-item.try-live a{
 
+} */
 
-
-/* Blue links Special*/
+/* --- blue highlight cta links --- */
 .nav-link-list-item .cta-link, .cta-link{
   color: var(--clr-blue)
 }
 
-/* Nav Active Link*/
+/* --- color active Links red --- */
 .nav-link-list-item .active{
   color: var(--clr-red);
   position: relative;
 }
 
+/* --- General Styles for collapsible nav content --- */
+.collapsible-content-container{
+  display: none;
+  margin-top: 3rem;
+}
+
+.open-collapsible{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.collapsible-content-container > div .collapsible-item-links{
+  display: flex;
+  flex-direction: row;
+  gap: 2.4rem;
+  overflow-x:auto;
+  min-width: 100%;    
+}
+
+.collapsible-content-item h3{
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.collapsible-content-item h4{
+  font-weight: 500;
+  font-size: 1.15rem;
+}
+
+.collapsible-content-container > div .collapsible-item-links .small-text{
+  font-weight: 400;
+  font-size: 1.12rem;
+}
+
+/* --- collapsible toggle button styles --- */
+.collapsible-toggle-btn{
+  background: none;
+}
+
+/* --- collapsible toggle icons button --- */
+.bx-plus, .bx-minus{
+  font-size: 1.2rem;
+  position: absolute;
+  top: 6px;
+}
 
 
-/* Media Queries */
+@media  screen and (max-width: 1279px) {
+  .nav-link-list-item a{
+    font-size: 1rem;
+  }
+
+  /* .main-link-list{
+    padding-top: 0.21rem;
+  } */
+
+  .nav-link-list-item.try-live a,
+  .nav-link-list-item.login a{
+    font-weight: 500;
+    font-size: 0.85rem;
+  }
+}
+
+
+/* --- media queries for mobile and tablet --- */
 @media screen and (max-width: 1024px){
+
+  .secondary-nav{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: red;
+  }
 
   .main-site-logo{
     display: inline-block;
@@ -192,9 +257,8 @@ body {
     margin-left: 0.3rem;
   }
 
-  /* --- main mobile and tablet nav hidden by default--- */
+  /* --- main mobile and tablet nav hidden by default --- */
   .main-nav-content{
-    /* display: none; */
     background: var(--clr-blue);
     position: absolute;
     top: 0;
@@ -232,12 +296,8 @@ body {
     gap: 1.3rem
   }
 
-  /* --- Hide the More + toggle */
-  .more-toggle{
-    display: none;
-  }
-
-  /* --- Change link color to white for all elements */
+  
+  /* --- Change link color to white for all elements --- */
   .primary-nav .nav-link-list-item a, .nav-link-list-item.try-live a{
     color: var(--clr-pure-white);
     font-size: 1.2rem;
@@ -245,11 +305,6 @@ body {
 
   .primary-nav p, h3, h4{
     color: var(--clr-pure-white);
-  }
-
-  .primary-nav h3{
-    font-size: 1.2rem;
-    font-weight: 500;
   }
 
   .nav-link-list .try-live{
@@ -267,6 +322,13 @@ body {
     font-weight: 400;
   }
 
+  /* --- collapsible content styles --- */
+
+  /* --- Hide the collapsible toggle --- */
+  .collapsible-toggle{
+    display: none;
+  }
+
   .collapsible-content-container{
     display: flex;
     flex-direction: column;
@@ -278,6 +340,8 @@ body {
   }
 
   .collapsible-content-item h3{
+    font-size: 1.2rem;
+    font-weight: 500;
     margin-bottom: 1rem;
   }
 
@@ -291,6 +355,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .collapsible-content-container > div:last-child .collapsible-item-links .small-text{
+    font-weight: 300;
   }
 
   .collapsible-content-container > div:last-child .collapsible-item-links{
@@ -309,10 +377,9 @@ body {
     background: #00000070;
   }
 
-  /* -- make flex items scrollable  */
+  /* --- make flex items scrollable --- */
   .collapsible-content-container > div:last-child .collapsible-item-links li p{
     min-width: 13.5rem;
-    font-weight: 300;
   }
 
   .primary-nav .nav-link-list-item .active{

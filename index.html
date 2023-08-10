@@ -55,14 +55,19 @@
             <li class="nav-link-list-item"><a href="#shop">Shop</a></li>
             <li class="nav-link-list-item"><a href="#packs">Packs</a></li>
             <li class="nav-link-list-item"><a href="#elp">Help</a></li>
-            <li class="nav-link-list-item more-toggle">
-              <a href="#more" class="active">More<i class="bx bx-plus"></i></a>
+            <li class="nav-link-list-item collapsible-toggle">
+              <button
+                class="active collapsible-toggle-btn"
+                onclick="handleCollapsible()"
+              >
+                More<i class="bx bx-plus"></i>
+              </button>
             </li>
             <li class="nav-link-list-item try-live">
-              <a href="#trial" class="cta-link small-text">Try Live for free</a>
+              <a href="#trial" class="cta-link">Try Live for free</a>
             </li>
             <li class="nav-link-list-item login">
-              <a href="#login" class="small-text">Log in or register</a>
+              <a href="#login">Log in or register</a>
             </li>
           </ul>
 
@@ -103,10 +108,8 @@
             </div>
             <div class="collapsible-content-item">
               <h3>More from Ableton:</h3>
-              <ul
-                class="more-links-row collapsible-item-links primary-nav-link-list"
-              >
-                <li class="more-links-col">
+              <ul class="collapsible-item-links primary-nav-link-list">
+                <li class="nav-link-list-item">
                   <a href="#loop">
                     <h4>Loop</h4>
                     <p class="small-text">
@@ -115,7 +118,7 @@
                     </p>
                   </a>
                 </li>
-                <li class="more-links-col">
+                <li class="nav-link-list-item">
                   <a href="#chord-inspiration-with-seed-to-stage">
                     <h4>Learning Music</h4>
                     <p class="small-text">
@@ -124,7 +127,7 @@
                     </p>
                   </a>
                 </li>
-                <li class="more-links-col">
+                <li class="nav-link-list-item">
                   <a href="#earningsynths">
                     <h4>Learning Synths</h4>
                     <p class="small-text">
@@ -133,7 +136,7 @@
                     </p>
                   </a>
                 </li>
-                <li class="more-links-col">
+                <li class="nav-link-list-item">
                   <a href="#makingmusic">
                     <h4>Making Music</h4>
                     <p class="small-text">
@@ -147,21 +150,20 @@
           </div>
         </div>
       </nav>
-
-      <nav class="secondary-nav">
-        <ul class="nav-link-list secondary-nav-link-list">
-          <li class="nav-link-list-item">
-            <a href="#About" class="small-text active">About</a>
-          </li>
-          <li class="nav-link-list-item">
-            <a href="#Jobs" class="small-text">Jobs</a>
-          </li>
-          <li class="nav-link-list-item">
-            <a href="#Apprenticeships" class="small-text">Apprenticeships</a>
-          </li>
-        </ul>
-      </nav>
     </div>
+    <nav class="secondary-nav">
+      <ul class="nav-link-list secondary-nav-link-list">
+        <li class="nav-link-list-item">
+          <a href="#About" class="small-text active">About</a>
+        </li>
+        <li class="nav-link-list-item">
+          <a href="#Jobs" class="small-text">Jobs</a>
+        </li>
+        <li class="nav-link-list-item">
+          <a href="#Apprenticeships" class="small-text">Apprenticeships</a>
+        </li>
+      </ul>
+    </nav>
     <main class="main">
       <section class="container banner">
         <!-- <img

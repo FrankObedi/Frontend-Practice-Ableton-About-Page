@@ -220,8 +220,30 @@ country_list.map((country) => {
 // add the new options to the select element
 countryContainer.appendChild(countryOptGroup);
 
+// desktop nav More + toggle
+const collapsibleContent = document.querySelector(
+  ".collapsible-content-container"
+);
+const collapsibleToggle = document.querySelector(".collapsible-toggle");
+const collapsibleToggleIcon = document.querySelector(".bx-plus");
+let collapsibleOpen = false;
+// function to collapsible content
+const handleCollapsible = () => {
+  collapsibleOpen = !collapsibleOpen;
+  collapsibleContent.classList.toggle("open-collapsible");
+
+  if (collapsibleOpen) {
+    collapsibleToggleIcon.classList.add("bx-minus");
+    collapsibleToggleIcon.classList.remove("bx-plus");
+  } else {
+    collapsibleToggleIcon.classList.remove("bx-minus");
+    collapsibleToggleIcon.classList.add("bx-plus");
+  }
+};
+
 // tablet and mobile menu toggle
 const menu = document.querySelector(".main-nav-content");
+const secondaryNav = document.querySelector(".secondary-nav");
 const menuToggle = document.querySelector(".menu-toggle");
 const menuToggleIcon = document.querySelector(".bx-caret-down");
 const logo = document.querySelector(".main-site-logo");
@@ -232,4 +254,26 @@ const setOpenNav = () => {
   menuToggle.classList.toggle("white-menu-toggle");
   menuToggleIcon.classList.toggle("bx-caret-up");
   menu.classList.toggle("visible-nav");
+  secondaryNav.classList.toggle("sticky");
 };
+
+// Make secondary nav sticky when scrolling up
+let lastScroll = 0;
+window.addEventListener("scroll", function () {
+  const currentScrollPos = window.scrollY;
+  if (currentScrollPos > lastScroll) {
+    secondaryNav.style.top = "-140px";
+  }
+
+  if (window.matchMedia("(max-width: 1024px)").matches) {
+  } else {
+    secondaryNav.style.top = "0";
+    secondaryNav.style.position = "sticky";
+    secondaryNav.style.zIndex = "15";
+  }
+  // if (currentScrollPos <= 0) {
+  //   secondaryNav.style.zIndex = "1";
+  //   console.log(lastScroll);
+  // }
+  lastScroll = currentScrollPos;
+});

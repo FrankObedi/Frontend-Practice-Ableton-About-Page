@@ -69,8 +69,12 @@ nav, .container{
 }
 
 /* --- primary Nav ---*/
-.primary-nav, .secondary-nav{
+.primary-nav{
   position: relative;
+  padding: 1.4rem 1.2rem;
+}
+
+.secondary-nav{
   padding: 1.05rem 1.2rem;
 }
 
@@ -116,7 +120,7 @@ nav, .container{
 }
 
 .main-link-list{  
-  padding-left:  4.5rem;
+  padding-left:  5.5rem;
 }
 
 .nav-link-list .try-live{
@@ -157,6 +161,11 @@ nav, .container{
 .nav-link-list-item .active{
   color: var(--clr-red);
   position: relative;
+}
+
+.secondary-nav .nav-link-list-item a{
+  font-weight: 500;
+  font-size: 0.78rem;
 }
 
 /* --- General Styles for collapsible nav content --- */
@@ -208,8 +217,29 @@ nav, .container{
 
 
 @media  screen and (max-width: 1279px) {
-  .nav-link-list-item a{
+  .nav-link-list-item a,
+  .collapsible-toggle-btn,
+  .bx-plus, .bx-minus{
     font-size: 1rem;
+  }
+
+  .bx-plus, .bx-minus{
+    top: 4px;
+  }
+
+  .collapsible-content-item h3{
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+  
+  .collapsible-content-item h4{
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .collapsible-content-container > div .collapsible-item-links .small-text{
+    font-weight: 400;
+    font-size: 0.875rem;
   }
 
   /* .main-link-list{
@@ -227,11 +257,12 @@ nav, .container{
 /* --- media queries for mobile and tablet --- */
 @media screen and (max-width: 1024px){
 
+  .primary-nav{
+    padding: 1.05rem 1.2rem;
+  }
+
   .secondary-nav{
-    position: absolute;
-    top: 0;
     width: 100%;
-    background-color: red;
   }
 
   .main-site-logo{
@@ -250,6 +281,11 @@ nav, .container{
     z-index: 5;
     color: var(--clr-pure-black);
     cursor: pointer;
+  }
+
+  /* --- make toggle button color white when menu is visible --- */
+  .white-menu-toggle{
+    color: white;
   }
 
   .bx-caret-down, .bx-caret-up{
@@ -276,11 +312,7 @@ nav, .container{
     transition: all 0.3s ease;
   }
 
-  /* --- make toggle button color white when menu is visible --- */
-  .white-menu-toggle{
-    color: white;
-  }
-
+  
   .main-link-list{
     margin: 0 0 2rem 0;
     padding-left:  0;

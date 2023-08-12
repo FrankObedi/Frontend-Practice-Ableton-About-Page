@@ -1114,6 +1114,10 @@ option {
     padding: 0.2rem;
   }
 
+  form input {
+    padding-left: 0.75rem;
+  }
+
   form .submit-btn {
     padding-left: 1rem;
     padding-right: 1rem;

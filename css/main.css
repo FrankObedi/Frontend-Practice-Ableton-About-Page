@@ -287,7 +287,7 @@ footer {
   display: flex;
   margin-left: 2rem;
   align-items: center;
-  gap: 7rem;
+  /* gap: 7rem; */
   width: 100%;
   padding: 6.3vw 1vw 6.3vw 6.3vw;
   z-index: 2;
@@ -317,6 +317,7 @@ footer {
   background-repeat: no-repeat;
   width: 34vw;
   height: 26vw;
+  margin-left: 8.3vw;
 }
 
 .gallery-2 .left-col {
@@ -325,8 +326,9 @@ footer {
   gap: 7rem;
 }
 
-.gallery-2 img:last-child {
+.gallery-2-right-img {
   width: 41vw;
+  margin-left: 8.3vw;
 }
 
 .gallery-2 .left-col img {
@@ -370,11 +372,19 @@ footer {
   padding-left: 1rem;
 }
 
+/* .gallery-3-container,
+.gallery-3 {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 3.5vw;
+} */
+
 .gallery-3-container,
 .gallery-3 {
   padding-top: 0;
   padding-bottom: 0;
   padding-right: 3.5vw;
+  margin-right: 2vw;
 }
 
 .gallery-4-container {
@@ -440,7 +450,7 @@ footer {
 }
 
 .jobs-notice-text a,
-h2 {
+.jobs-notice-text h2 {
   font-size: 1.68rem;
   font-weight: 500;
 }
@@ -593,6 +603,7 @@ form .submit-btn {
 }
 
 select {
+  position: relative;
   background: var(--clr-gray-light);
   padding: 0.35rem;
   font-weight: 500;
@@ -749,7 +760,7 @@ option {
   }
 }
 
-/* --- media queries for mobile and tablet --- */
+/* --- media queries for tablet --- */
 @media screen and (max-width: 1024px) {
   .primary-nav {
     padding: 1.05rem 1.2rem;
@@ -920,10 +931,87 @@ option {
     position: relative;
   }
 
+  .about-content {
+    width: 63vw;
+  }
+
+  .about-content h2 {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .about-content p {
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  .gallery-1 > div:last-child {
+    width: 37vw;
+  }
+
+  .gallery-4 img:first-child {
+    width: 33vw;
+    height: 24.85vw;
+  }
+
+  .gallery-4 img:last-child {
+    width: 37vw;
+    height: 40vw;
+  }
+
+  .gallery-4-container::before {
+    width: 67.6vw;
+    margin-left: 3.1vw;
+  }
+
+  .job-notice {
+    flex-direction: column;
+  }
+
+  .job-notice .jobs-notice-img,
+  .jobs-notice-text {
+    width: 100%;
+  }
+
+  .job-notice .jobs-notice-img {
+    height: 50vw;
+  }
+
+  .jobs-notice-text {
+    height: fit-content;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .jobs-notice-text a,
+  .jobs-notice-text h2 {
+    font-size: 1.2rem;
+  }
+
+  /* --- why ableton video --- */
+  .ableton-video {
+    width: 63vw;
+  }
+
+  .ableton-video iframe {
+    width: 100%;
+    aspect-ratio: 2/1.2;
+    height: auto;
+  }
+
+  .video-container {
+    justify-content: center;
+    align-items: center;
+  }
+
   .main-footer-row-top,
   .main-footer-row-bottom {
     grid-template-columns: 1fr;
     row-gap: 3.21rem;
+  }
+
+  .form-container {
+    grid-area: 1 / 1 / span 1;
   }
 
   .footer-legals,
@@ -947,5 +1035,76 @@ option {
   .made-in-berlin {
     margin-top: 5rem;
     flex-direction: row-reverse;
+  }
+}
+
+/* media queries for mobile */
+@media screen and (max-width: 767px) {
+  .hero-header {
+    font-size: 4rem;
+  }
+
+  .container {
+    margin-left: 8.3vw;
+    margin-right: 8.3vw;
+  }
+
+  .img-gallery {
+    padding-left: 4.3vw;
+  }
+
+  .gallery-1-container,
+  .gallery-4-container,
+  .gallery-2-container {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  /* .gallery-2-container {
+    margin-left: 0;
+  } */
+
+  .gallery-1 > div:last-child {
+    width: 33vw;
+  }
+
+  .gallery-2 .left-col {
+    gap: 3rem;
+  }
+
+  .gallery-2-container::before {
+    width: 58vw;
+  }
+
+  .gallery-2-container {
+    padding-top: 2.5vw;
+    padding-bottom: 2.5vw;
+  }
+
+  .gallery-3 {
+    background-color: red;
+    margin: 0;
+    padding: 0;
+  }
+
+  .gallery-3-container {
+    background-color: yellow;
+    padding: 0;
+  }
+
+  .gallery-4 {
+    padding-right: 0;
+  }
+
+  .about-content {
+    width: 100%;
+  }
+
+  .video-container {
+    justify-content: start;
+  }
+
+  .ableton-video {
+    width: 100%;
   }
 }

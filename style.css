@@ -72,6 +72,10 @@ h6 {
   --clr-gray-light: #eeeeee;
   --clr-pure-white: #ffffff;
   --clr-pure-black: #000000;
+  --clr-facebook-blue: #405de6;
+  --clr-youtube-red: #ff0000;
+  --clr-twitter-blue: #1da1f2;
+  --clr-insta-orange: #f77737;
 }
 
 nav,
@@ -149,6 +153,7 @@ footer {
 .collapsible-toggle-btn {
   color: var(--clr-pure-black);
   font-size: 1.2rem;
+  cursor: pointer;
 }
 
 .primary-nav .nav-link-list-item a {
@@ -456,18 +461,161 @@ footer {
 .footer-wrapper {
   padding: 7vw 0;
   margin-left: 8vw;
+  margin-right: 8vw;
 }
 
 .footer-logo {
   font-size: 4rem;
   font-weight: 500;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
-.footer-main-row-top {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+footer a {
+  color: var(--clr-pure-black);
 }
+
+footer h4,
+.footer-legals-links li a,
+.made-in-berlin p {
+  font-weight: 500;
+}
+
+.main-footer-row-top,
+.main-footer-row-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  margin-bottom: 5rem;
+}
+
+.footer-link-list {
+  display: flex;
+  flex-direction: column;
+}
+
+footer h4,
+.main-footer-row-top,
+.main-footer-row-bottom .footer-link-list a,
+footer p {
+  font-size: 1.2rem;
+}
+
+.footer-legals {
+  display: flex;
+}
+
+.footer-legals-links {
+  display: flex;
+  flex: 1;
+  gap: 1rem;
+}
+
+.footer-legals-links li a,
+.made-in-berlin p {
+  font-weight: 500;
+  font-size: 0.78rem;
+}
+
+.footer-link-list .bx-chevron-right {
+  position: relative;
+  top: 0.18rem;
+}
+
+.made-in-berlin {
+  width: max-content;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.made-in-berlin p {
+  width: 100%;
+}
+
+/* footer social media icons styles */
+.socials {
+  margin-top: 1rem;
+}
+.social-icon {
+  padding: 0.25rem;
+  font-size: 2rem;
+  margin: 0 auto;
+  color: var(--clr-pure-white);
+}
+
+.socials a {
+  width: 35px;
+  height: 35px;
+  margin: 0 0.15rem;
+}
+
+.bxl-facebook-circle {
+  background: var(--clr-facebook-blue);
+}
+
+.bxl-twitter {
+  background: var(--clr-twitter-blue);
+}
+
+.bxl-youtube {
+  background: var(--clr-youtube-red);
+}
+
+.bxl-instagram {
+  background: var(--clr-insta-orange);
+}
+
+/* -- newsletter form --- */
+form {
+  display: flex;
+  background-color: red;
+}
+
+.footer-form p {
+  margin-bottom: 1.5rem;
+}
+
+form input,
+form .submit-btn {
+  padding: 0.4rem;
+}
+
+form input {
+  background: var(--clr-gray-light);
+  flex: 1;
+}
+
+form .submit-btn {
+  background: var(--clr-blue);
+  color: var(--clr-pure-white);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  cursor: pointer;
+}
+
+select {
+  background: var(--clr-gray-light);
+  padding: 0.35rem;
+  font-weight: 500;
+}
+
+select:first-child {
+  margin-right: -3px;
+}
+
+option {
+  margin-right: 10px;
+}
+
+::selection {
+  background: var(--clr-blue); /* WebKit/Blink Browsers */
+  color: var(--clr-pure-white);
+}
+::-moz-selection {
+  background: var(--clr-blue); /* Gecko Browsers */
+  color: var(--clr-pure-white);
+}
+
+/* language option */
 
 /* --- media queries for large screens --- */
 
@@ -682,8 +830,8 @@ footer {
   }
 
   .primary-nav p,
-  h3,
-  h4 {
+  .primary-nav h3,
+  .primary-nav h4 {
     color: var(--clr-pure-white);
   }
 
@@ -772,8 +920,32 @@ footer {
     position: relative;
   }
 
-  /* --- body styles --- */
-  /* .banner-text {
-    font-size: 4rem;
-  } */
+  .main-footer-row-top,
+  .main-footer-row-bottom {
+    grid-template-columns: 1fr;
+    row-gap: 3.21rem;
+  }
+
+  .footer-legals,
+  .footer-legals-links {
+    flex-direction: column;
+  }
+
+  footer h4 {
+    font-size: 1rem;
+  }
+
+  .main-footer .footer-link-list a,
+  footer p {
+    font-size: 0.888rem;
+  }
+
+  .footer-legals-links {
+    gap: 0.4rem;
+  }
+
+  .made-in-berlin {
+    margin-top: 5rem;
+    flex-direction: row-reverse;
+  }
 }

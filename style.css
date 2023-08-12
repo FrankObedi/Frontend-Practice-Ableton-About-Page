@@ -76,8 +76,13 @@ h6 {
 
 nav,
 .container,
-.main {
+.main,
+footer {
   background: var(--clr-pure-white);
+}
+
+.main {
+  padding-bottom: 8rem;
 }
 
 /* --- primary Nav ---*/
@@ -230,10 +235,6 @@ nav,
   top: 6px;
 }
 
-/* --- main content styles --- */
-/* .main {
-  overflow: hidden;
-} */
 .hero {
   min-height: calc(100vh - 120px);
   margin-left: 8.3vw;
@@ -396,11 +397,84 @@ nav,
   height: 38vw;
 }
 
+/* see latest jobs section */
+
+.job-notice-container {
+  margin-left: 8vw;
+  margin-right: 8vw;
+  background-color: red;
+  margin-bottom: 0;
+}
+
+.job-notice {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.jobs-notice-img,
+.jobs-notice-text {
+  height: 41.63vw;
+}
+
+.job-notice .jobs-notice-img {
+  background-image: url("https://ableton-production.imgix.net/about/photo-8.jpg?fit=crop&crop=right");
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+}
+
+.jobs-notice-text {
+  background-color: var(--clr-sky);
+  width: 50%;
+  margin: auto 0;
+  padding: 0 8vw;
+  display: flex;
+  align-items: center;
+}
+
+.jobs-notice-text a,
+h2 {
+  font-size: 1.68rem;
+  font-weight: 500;
+}
+
+.jobs-notice-text h2 {
+  margin-bottom: 2rem;
+}
+
+.jobs-notice-text a .bx-chevron-right {
+  position: relative;
+  top: 0.3rem;
+}
+
+footer {
+  border-top: 2px solid var(--clr-gray-light);
+}
+
+.footer-wrapper {
+  padding: 7vw 0;
+  margin-left: 8vw;
+}
+
+.footer-logo {
+  font-size: 4rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+}
+
+.footer-main-row-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 /* --- media queries for large screens --- */
 
 @media screen and (min-width: 1609px) {
   .main,
-  nav {
+  nav,
+  footer {
     width: 83%;
     margin: 0 auto;
   }
@@ -477,6 +551,15 @@ nav,
     width: 60vw;
   }
 
+  .job-notice-container {
+    padding: 0;
+  }
+
+  .jobs-notice-img,
+  .jobs-notice-text {
+    height: 34.3vw;
+  }
+
   /* .secondary-nav .nav-link-list-item a{
     font-weight: 500;
     font-size: 0.875rem;
@@ -510,10 +593,6 @@ nav,
     font-weight: 400;
     font-size: 0.875rem;
   }
-
-  /* .main-link-list{
-    padding-top: 0.21rem;
-  } */
 
   .nav-link-list-item.try-live a,
   .nav-link-list-item.login a {

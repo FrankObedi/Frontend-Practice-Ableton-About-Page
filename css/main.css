@@ -1,0 +1,1125 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;500;600;700&family=Open+Sans:wght@300;400&family=Poppins:wght@300;400;500;600&display=swap");
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  list-style-type: none;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Jost", sans-serif;
+  color: var(--clr-pure-black);
+  background-color: #f3f3f3;
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+:root {
+  --clr-yellow: #fbffa7;
+  --clr-red: #fd5948;
+  --clr-sky: #b1c5ff;
+  --clr-purple: #d5b3ff;
+  --clr-lime: #b6ffc0;
+  --clr-blue: #0000ff;
+  --clr-gray-light: #eeeeee;
+  --clr-pure-white: #ffffff;
+  --clr-pure-black: #000000;
+  --clr-facebook-blue: #405de6;
+  --clr-youtube-red: #ff0000;
+  --clr-twitter-blue: #1da1f2;
+  --clr-insta-orange: #f77737;
+}
+
+nav,
+.container,
+.main,
+footer {
+  background: var(--clr-pure-white);
+}
+
+.main {
+  padding-bottom: 8rem;
+}
+
+/* --- primary Nav ---*/
+.primary-nav {
+  position: relative;
+  padding: 1.4rem 2rem;
+}
+
+.secondary-nav {
+  padding: 1.05rem 2rem;
+}
+
+.primary-nav {
+  border-bottom: 2px solid var(--clr-gray-light);
+  position: relative;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.secondary-nav {
+  transition: all 0.5s ease;
+}
+
+.main-site-logo {
+  position: absolute;
+  left: auto;
+  top: auto;
+  display: block;
+  width: 3.75em;
+  height: 1.75em;
+}
+
+.primary-nav-left {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* --- hide mobile menu toggle on desktop --- */
+.menu-toggle {
+  display: none;
+  background: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.nav-link-list {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  width: 100%;
+}
+
+.main-link-list {
+  padding-left: 5.5rem;
+}
+
+.nav-link-list .try-live {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.nav-link-list-item a,
+.collapsible-toggle-btn {
+  color: var(--clr-pure-black);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.primary-nav .nav-link-list-item a {
+  font-weight: 500;
+}
+
+.nav-link-list-item a.small-text,
+.small-text {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.nav-link-list-item.login a {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* .nav-link-list-item.try-live a{
+
+} */
+
+/* --- blue highlight cta links --- */
+.nav-link-list-item .cta-link,
+.cta-link {
+  color: var(--clr-blue);
+}
+
+/* --- color active Links red --- */
+.nav-link-list-item .active {
+  color: var(--clr-red);
+  position: relative;
+}
+
+.secondary-nav .nav-link-list-item a {
+  font-weight: 500;
+  font-size: 0.975rem;
+}
+
+/* --- General Styles for collapsible nav content --- */
+.collapsible-content-container {
+  display: none;
+  margin-top: 3rem;
+}
+
+.open-collapsible {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.collapsible-content-container > div .collapsible-item-links {
+  display: flex;
+  flex-direction: row;
+  gap: 2.4rem;
+  overflow-x: auto;
+  min-width: 100%;
+}
+
+.collapsible-content-item h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.collapsible-content-item h4 {
+  font-weight: 500;
+  font-size: 1.15rem;
+}
+
+.collapsible-content-container > div .collapsible-item-links .small-text {
+  font-weight: 400;
+  font-size: 1.12rem;
+}
+
+/* --- collapsible toggle button styles --- */
+.collapsible-toggle-btn {
+  background: none;
+}
+
+/* --- collapsible toggle icons button --- */
+.bx-plus,
+.bx-minus {
+  font-size: 1.2rem;
+  position: absolute;
+  top: 6px;
+}
+
+.hero {
+  min-height: calc(100vh - 120px);
+  margin-left: 8.3vw;
+  margin-right: 8.3vw;
+  background-image: url("https://ableton-production.imgix.net/about/header.jpg?fit=crop&auto=format&fm=jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-header {
+  color: var(--clr-red);
+  font-size: 8.5rem;
+  font-weight: 500;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+/* --- section paragraphs styles --- */
+.about-content {
+  max-width: 750px;
+  margin: 3rem 0;
+}
+
+.about-content h2 {
+  font-size: 1.67rem;
+  font-weight: 500;
+}
+
+.about-content p {
+  margin: 1.875rem 0;
+  font-size: 1.2rem;
+}
+
+/* --- image gallery styles --- */
+.img-gallery {
+  display: flex;
+  margin-left: 2rem;
+  align-items: center;
+  /* gap: 7rem; */
+  width: 100%;
+  padding: 6.3vw 1vw 6.3vw 6.3vw;
+  z-index: 2;
+}
+
+/* .gallery-1,
+.gallery-2,
+.gallery-3 {
+  margin-left: 8.3vw;
+} */
+
+.gallery-1 > div:first-child {
+  background-image: url("https://ableton-production.imgix.net/about/photo-1.jpg?fit=crop");
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  width: 41vw;
+  height: 41vw;
+  max-width: 650px;
+  max-height: 650px;
+}
+
+.gallery-1 > div:last-child {
+  background-image: url("https://ableton-production.imgix.net/about/photo-2.jpg?fit=crop");
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  width: 34vw;
+  height: 26vw;
+  margin-left: 8.3vw;
+}
+
+.gallery-2 .left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+}
+
+.gallery-2-right-img {
+  width: 41vw;
+  margin-left: 8.3vw;
+}
+
+.gallery-2 .left-col img {
+  width: 33.3vw;
+  height: 25vw;
+  object-fit: cover;
+}
+
+.gallery-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 58%;
+}
+
+.gallery-1-container::before {
+  right: 0;
+  background: var(--clr-yellow);
+}
+
+.gallery-2-container::before {
+  left: 0;
+  width: 80%;
+  background: var(--clr-lime);
+}
+
+.gallery-4-container::before {
+  margin: 0 auto;
+  height: 100%;
+  width: 66.1vw;
+  background: var(--clr-purple);
+}
+
+/* --- why ableton video --- */
+.ableton-video {
+  width: 750px;
+}
+
+.ableton-video figcaption {
+  padding-left: 1rem;
+}
+
+/* .gallery-3-container,
+.gallery-3 {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 3.5vw;
+} */
+
+.gallery-3-container,
+.gallery-3 {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: 3.5vw;
+  margin-right: 2vw;
+}
+
+.gallery-4-container {
+  padding-top: 2.5vw;
+  padding-bottom: 2.5vw;
+}
+
+.gallery-4 img {
+  object-fit: cover;
+}
+
+.gallery-4 img:first-child {
+  width: 30vw;
+  height: 24.85vw;
+}
+
+.gallery-4-right-col {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gallery-4 img:last-child {
+  width: 38vw;
+  height: 38vw;
+}
+
+/* see latest jobs section */
+
+.job-notice-container {
+  margin-left: 8vw;
+  margin-right: 8vw;
+  background-color: red;
+  margin-bottom: 0;
+}
+
+.job-notice {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.jobs-notice-img,
+.jobs-notice-text {
+  height: 41.63vw;
+}
+
+.job-notice .jobs-notice-img {
+  background-image: url("https://ableton-production.imgix.net/about/photo-8.jpg?fit=crop&crop=right");
+  background-position: 100% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+}
+
+.jobs-notice-text {
+  background-color: var(--clr-sky);
+  width: 50%;
+  margin: auto 0;
+  padding: 0 8vw;
+  display: flex;
+  align-items: center;
+}
+
+.jobs-notice-text a,
+.jobs-notice-text h2 {
+  font-size: 1.68rem;
+  font-weight: 500;
+}
+
+.jobs-notice-text h2 {
+  margin-bottom: 2rem;
+}
+
+.jobs-notice-text a .bx-chevron-right {
+  position: relative;
+  top: 0.3rem;
+}
+
+footer {
+  border-top: 2px solid var(--clr-gray-light);
+}
+
+.footer-wrapper {
+  padding: 7vw 0;
+  margin-left: 8vw;
+  margin-right: 8vw;
+}
+
+.footer-logo {
+  font-size: 4rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+footer a {
+  color: var(--clr-pure-black);
+}
+
+footer h4,
+.footer-legals-links li a,
+.made-in-berlin p {
+  font-weight: 500;
+}
+
+.main-footer-row-top,
+.main-footer-row-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr;
+  margin-bottom: 5rem;
+}
+
+.footer-link-list {
+  display: flex;
+  flex-direction: column;
+}
+
+footer h4,
+.main-footer-row-top,
+.main-footer-row-bottom .footer-link-list a,
+footer p {
+  font-size: 1.2rem;
+}
+
+.footer-legals {
+  display: flex;
+}
+
+.footer-legals-links {
+  display: flex;
+  flex: 1;
+  gap: 1rem;
+}
+
+.footer-legals-links li a,
+.made-in-berlin p {
+  font-weight: 500;
+  font-size: 0.78rem;
+}
+
+.footer-link-list .bx-chevron-right {
+  position: relative;
+  top: 0.18rem;
+}
+
+.made-in-berlin {
+  width: max-content;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.made-in-berlin p {
+  width: 100%;
+}
+
+/* footer social media icons styles */
+.socials {
+  margin-top: 1rem;
+}
+.social-icon {
+  padding: 0.25rem;
+  font-size: 2rem;
+  margin: 0 auto;
+  color: var(--clr-pure-white);
+}
+
+.socials a {
+  width: 35px;
+  height: 35px;
+  margin: 0 0.15rem;
+}
+
+.bxl-facebook-circle {
+  background: var(--clr-facebook-blue);
+}
+
+.bxl-twitter {
+  background: var(--clr-twitter-blue);
+}
+
+.bxl-youtube {
+  background: var(--clr-youtube-red);
+}
+
+.bxl-instagram {
+  background: var(--clr-insta-orange);
+}
+
+/* -- newsletter form --- */
+form {
+  display: flex;
+}
+
+.footer-form p {
+  margin-bottom: 1.5rem;
+}
+
+form input,
+form .submit-btn {
+  padding: 0.4rem;
+}
+
+form input {
+  background: var(--clr-gray-light);
+  flex: 1;
+  padding-left: 0.75rem;
+}
+
+form .submit-btn {
+  width: fit-content;
+  background: var(--clr-blue);
+  color: var(--clr-pure-white);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  cursor: pointer;
+}
+
+select {
+  position: relative;
+  background: var(--clr-gray-light);
+  padding: 0.35rem;
+  font-weight: 500;
+}
+
+select:first-child {
+  margin-right: -3px;
+}
+
+option {
+  margin-right: 10px;
+}
+
+::selection {
+  background: var(--clr-blue); /* WebKit/Blink Browsers */
+  color: var(--clr-pure-white);
+}
+::-moz-selection {
+  background: var(--clr-blue); /* Gecko Browsers */
+  color: var(--clr-pure-white);
+}
+
+/* language option */
+
+/* --- media queries for large screens --- */
+
+@media screen and (min-width: 1609px) {
+  .main,
+  nav,
+  footer {
+    width: 83%;
+    margin: 0 auto;
+  }
+
+  .primary-nav,
+  .secondary-nav {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .container {
+    padding: 2rem;
+  }
+
+  .about-content {
+    max-width: 800px;
+    margin: 3rem 0;
+  }
+
+  .about-content p {
+    font-size: 1.15rem;
+  }
+
+  .img-gallery {
+    padding: 3.5vw 4.33vw 3.5vw 3.5vw;
+  }
+
+  .gallery-3-container,
+  .gallery-3 {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  /* .gallery-1 > div:first-child {
+    margin-left: 3.5vw;
+  } */
+
+  .gallery-1 > div:last-child {
+    max-width: 27.3vw;
+    max-height: 20.5vw;
+  }
+
+  .gallery-2 img:last-child {
+    width: 35vw;
+  }
+
+  .gallery-2 .left-col img {
+    width: 28vw;
+    height: 21vw;
+  }
+
+  .gallery-4 img:first-child {
+    height: 21vw;
+    width: 27.7vw;
+  }
+
+  .gallery-4 img:last-child {
+    width: 33.7vw;
+    height: 33.7vw;
+  }
+
+  .gallery-4-container,
+  .gallery-4 {
+    padding-right: 0;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+  }
+
+  .gallery-4-right-col {
+    width: 100%;
+  }
+
+  .gallery-4-container::before {
+    width: 60vw;
+  }
+
+  .job-notice-container {
+    padding: 0;
+  }
+
+  .jobs-notice-img,
+  .jobs-notice-text {
+    height: 34.3vw;
+  }
+
+  /* .secondary-nav .nav-link-list-item a{
+    font-weight: 500;
+    font-size: 0.875rem;
+  } */
+}
+
+@media screen and (max-width: 1279px) {
+  .nav-link-list-item a,
+  .collapsible-toggle-btn,
+  .bx-plus,
+  .bx-minus {
+    font-size: 1rem;
+  }
+
+  .bx-plus,
+  .bx-minus {
+    top: 4px;
+  }
+
+  .collapsible-content-item h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+
+  .collapsible-content-item h4 {
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .collapsible-content-container > div .collapsible-item-links .small-text {
+    font-weight: 400;
+    font-size: 0.875rem;
+  }
+
+  .nav-link-list-item.try-live a,
+  .nav-link-list-item.login a {
+    font-weight: 500;
+    font-size: 0.85rem;
+  }
+}
+
+/* --- media queries for tablet --- */
+@media screen and (max-width: 1024px) {
+  .primary-nav {
+    padding: 1.05rem 1.2rem;
+  }
+
+  .secondary-nav {
+    width: 100%;
+  }
+
+  .main-site-logo {
+    display: inline-block;
+    position: relative;
+    z-index: 15;
+  }
+
+  .white-logo path {
+    stroke: #eee;
+  }
+
+  .menu-toggle {
+    position: relative;
+    display: inline-block;
+    z-index: 5;
+    color: var(--clr-pure-black);
+    cursor: pointer;
+  }
+
+  /* --- make toggle button color white when menu is visible --- */
+  .white-menu-toggle {
+    color: white;
+  }
+
+  .bx-caret-down,
+  .bx-caret-up {
+    font-size: 1rem;
+    margin-left: 0.3rem;
+  }
+
+  /* --- main mobile and tablet nav hidden by default --- */
+  .main-nav-content {
+    background: var(--clr-blue);
+    position: absolute;
+    top: 0;
+    transform: translateY(-100%);
+    width: 100%;
+    left: 0;
+    z-index: 2;
+    padding-left: 1.01rem;
+    transition: all 0.3s ease;
+  }
+
+  .visible-nav {
+    display: block;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+  }
+
+  .main-link-list {
+    margin: 0 0 2rem 0;
+    padding-left: 0;
+    padding-top: 4.5rem;
+  }
+
+  .primary-nav-link-list {
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    z-index: 10;
+    align-items: flex-start;
+    gap: 1.3rem;
+  }
+
+  /* --- Change link color to white for all elements --- */
+  .primary-nav .nav-link-list-item a,
+  .nav-link-list-item.try-live a {
+    color: var(--clr-pure-white);
+    font-size: 1.2rem;
+  }
+
+  .primary-nav p,
+  .primary-nav h3,
+  .primary-nav h4 {
+    color: var(--clr-pure-white);
+  }
+
+  .nav-link-list .try-live {
+    margin-left: 0;
+  }
+
+  .nav-link-list-item.try-live a.small-text {
+    color: var(--clr-pure-white);
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .nav-link-list-item a.small-text,
+  .small-text {
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+
+  /* --- collapsible content styles --- */
+
+  /* --- Hide the collapsible toggle --- */
+  .collapsible-toggle {
+    display: none;
+  }
+
+  .collapsible-content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .collapsible-content-container,
+  .collapsible-content-item {
+    overflow: hidden;
+  }
+
+  .collapsible-content-item h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .collapsible-item-links h4 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-weight: 400;
+  }
+
+  .collapsible-content-container > div:first-child .collapsible-item-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .collapsible-content-container
+    > div:last-child
+    .collapsible-item-links
+    .small-text {
+    font-weight: 300;
+  }
+
+  .collapsible-content-container > div:last-child .collapsible-item-links {
+    display: flex;
+    flex-direction: row;
+    gap: 2.4rem;
+    overflow-x: auto;
+    min-width: 100%;
+  }
+
+  .collapsible-item-links::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .collapsible-item-links::-webkit-scrollbar-thumb {
+    background: #00000070;
+  }
+
+  /* --- make flex items scrollable --- */
+  .collapsible-content-container > div:last-child .collapsible-item-links li p {
+    min-width: 13.5rem;
+  }
+
+  .primary-nav .nav-link-list-item .active {
+    color: var(--clr-red);
+    position: relative;
+  }
+
+  .about-content {
+    width: 63vw;
+  }
+
+  .about-content h2 {
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .about-content p {
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+  }
+
+  .gallery-1 > div:last-child {
+    width: 37vw;
+  }
+
+  .gallery-4 img:first-child {
+    width: 33vw;
+    height: 24.85vw;
+  }
+
+  .gallery-4 img:last-child {
+    width: 37vw;
+    height: 40vw;
+  }
+
+  .gallery-4-container::before {
+    width: 67.6vw;
+    margin-left: 3.1vw;
+  }
+
+  .job-notice {
+    flex-direction: column;
+  }
+
+  .job-notice .jobs-notice-img,
+  .jobs-notice-text {
+    width: 100%;
+  }
+
+  .job-notice .jobs-notice-img {
+    height: 50vw;
+  }
+
+  .jobs-notice-text {
+    height: fit-content;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .jobs-notice-text a,
+  .jobs-notice-text h2 {
+    font-size: 1.2rem;
+  }
+
+  /* --- why ableton video --- */
+  .ableton-video {
+    width: 63vw;
+  }
+
+  .ableton-video iframe {
+    width: 100%;
+    aspect-ratio: 2/1.2;
+    height: auto;
+  }
+
+  .video-container {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-footer-row-top,
+  .main-footer-row-bottom {
+    grid-template-columns: 1fr;
+    row-gap: 3.21rem;
+  }
+
+  .form-container {
+    grid-area: 1 / 1 / span 1;
+  }
+
+  .footer-legals,
+  .footer-legals-links {
+    flex-direction: column;
+  }
+
+  footer h4 {
+    font-size: 1rem;
+  }
+
+  .main-footer .footer-link-list a,
+  footer p {
+    font-size: 0.888rem;
+  }
+
+  .footer-legals-links {
+    gap: 0.4rem;
+  }
+
+  .made-in-berlin {
+    margin-top: 5rem;
+    flex-direction: row-reverse;
+  }
+}
+
+/* media queries for mobile */
+@media screen and (max-width: 767px) {
+  .hero-header {
+    font-size: 4rem;
+  }
+
+  .container {
+    margin-left: 8.3vw;
+    margin-right: 8.3vw;
+  }
+
+  .img-gallery {
+    padding-left: 4.3vw;
+  }
+
+  .gallery-1-container,
+  .gallery-4-container,
+  .gallery-2-container {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  /* .gallery-2-container {
+    margin-left: 0;
+  } */
+
+  .gallery-1 > div:last-child {
+    width: 33vw;
+  }
+
+  .gallery-2 .left-col {
+    gap: 3rem;
+  }
+
+  .gallery-2-container::before {
+    width: 58vw;
+  }
+
+  .gallery-2-container {
+    padding-top: 2.5vw;
+    padding-bottom: 2.5vw;
+  }
+
+  .gallery-3 {
+    background-color: red;
+    margin: 0;
+    padding: 0;
+  }
+
+  .gallery-3-container {
+    background-color: yellow;
+    padding: 0;
+  }
+
+  .gallery-4 {
+    padding-right: 0;
+  }
+
+  .about-content {
+    width: 100%;
+  }
+
+  .video-container {
+    justify-content: start;
+  }
+
+  .ableton-video {
+    width: 100%;
+  }
+
+  form input,
+  form .submit-btn {
+    padding: 0.2rem;
+  }
+
+  form .submit-btn {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  form input {
+    padding-left: 0.75rem;
+  }
+}

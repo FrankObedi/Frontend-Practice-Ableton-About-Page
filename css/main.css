@@ -372,13 +372,6 @@ footer {
   padding-left: 1rem;
 }
 
-/* .gallery-3-container,
-.gallery-3 {
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-right: 3.5vw;
-} */
-
 .gallery-3-container,
 .gallery-3 {
   padding-top: 0;
@@ -390,6 +383,10 @@ footer {
 .gallery-4-container {
   padding-top: 2.5vw;
   padding-bottom: 2.5vw;
+}
+
+.gallery-4 {
+  padding-right: 0;
 }
 
 .gallery-4 img {
@@ -1060,10 +1057,6 @@ option {
     margin-right: 0;
     margin-left: 0;
   }
-
-  /* .gallery-2-container {
-    margin-left: 0;
-  } */
 
   .gallery-1 > div:last-child {
     width: 33vw;
